@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — ASCEND 2.0</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body data-page="billing">
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav id="navbar"></nav>
+  <div class="mobile-menu" id="mobile-menu"></div>
+
+  <header class="page-header">
+    <div class="page-header-inner fade-in-section">
+      <div class="section-tag mono-text">// FINAL STEP</div>
+      <h1>Secure <span class="gradient-text">Checkout</span></h1>
+      <p>Complete your order and start the transformation.</p>
+    </div>
+  </header>
+
+  <main class="page-content" style="padding-top:2rem;">
+    <div class="billing-layout">
+
+      <!-- Billing Form -->
+      <div class="billing-form-card fade-in-section">
+        <h3>📦 Shipping Information</h3>
+
+        <p class="form-section-title">// CONTACT</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input id="billing-name" class="form-input" type="text" placeholder="Jayrajsinh Parmar" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone *</label>
+            <input id="billing-phone" class="form-input" type="tel" placeholder="+1 (555) 000-0000" />
+          </div>
+        </div>
+
+        <p class="form-section-title">// DELIVERY ADDRESS</p>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label class="form-label">Street Address *</label>
+            <input id="billing-address" class="form-input" type="text" placeholder="123 Ascend Avenue" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">City *</label>
+            <input id="billing-city" class="form-input" type="text" placeholder="Mumbai" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">State / Province</label>
+            <input class="form-input" type="text" placeholder="Maharashtra" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">ZIP / Postal Code</label>
+            <input class="form-input" type="text" placeholder="400001" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Country</label>
+            <input class="form-input" type="text" placeholder="India" />
+          </div>
+        </div>
+
+        <p class="form-section-title">// PAYMENT METHOD</p>
+
+        <div class="pay-tabs">
+          <button class="pay-tab active ripple-btn" data-tab="card">💳 Credit Card</button>
+          <button class="pay-tab ripple-btn" data-tab="upi">⚡ UPI</button>
+          <button class="pay-tab ripple-btn" data-tab="cod">📦 Cash on Delivery</button>
+        </div>
+
+        <!-- Card Panel -->
+        <div class="pay-panel active" id="pay-card">
+          <div class="card-icons">
+            <span class="card-icon">VISA</span>
+            <span class="card-icon">MC</span>
+            <span class="card-icon">AMEX</span>
+            <span class="card-icon">RuPay</span>
+          </div>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label class="form-label">Card Number</label>
+              <input class="form-input" type="text" placeholder="1234 5678 9012 3456" maxlength="19"
+                oninput="this.value=this.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim()" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Expiry Date</label>
+              <input class="form-input" type="text" placeholder="MM / YY" maxlength="7" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">CVV</label>
+              <input class="form-input" type="password" placeholder="•••" maxlength="4" />
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Name on Card</label>
+              <input class="form-input" type="text" placeholder="JAYRAJSINH PARMAR" />
+            </div>
+          </div>
+        </div>
+
+        <!-- UPI Panel -->
+        <div class="pay-panel" id="pay-upi">
+          <div class="form-group" style="margin-top:0.5rem;">
+            <label class="form-label">UPI ID</label>
+            <input class="form-input" type="text" placeholder="yourname@upi" />
+          </div>
+          <p style="color:var(--muted);font-size:0.8rem;margin-top:0.75rem;">
+            You will receive a payment request on your UPI app after placing the order.
+          </p>
+        </div>
+
+        <!-- COD Panel -->
+        <div class="pay-panel" id="pay-cod">
+          <div style="background:rgba(34,211,165,0.06);border:1px solid rgba(34,211,165,0.2);border-radius:12px;padding:1rem;margin-top:0.5rem;">
+            <p style="color:var(--green);font-size:0.9rem;">✓ Cash on Delivery available for orders under $500.</p>
+            <p style="color:var(--muted);font-size:0.8rem;margin-top:0.4rem;">Pay in cash when your order arrives at your door.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Order Summary -->
+      <div class="billing-order-card fade-in-section">
+        <h3>🛒 Order Summary</h3>
+
+        <table class="billing-order-table">
+          <tbody id="billing-summary-body">
+            <tr><td colspan="3" style="color:var(--muted);text-align:center;padding:1rem">Loading cart…</td></tr>
+          </tbody>
+        </table>
+
+        <hr class="billing-divider" />
+
+        <div class="billing-total-row">
+          <span class="bt-label">Subtotal</span>
+          <span class="bt-val" id="billing-subtotal">$0.00</span>
+        </div>
+        <div class="billing-total-row">
+          <span class="bt-label">Shipping</span>
+          <span class="bt-val" style="color:var(--green)">FREE</span>
+        </div>
+        <div class="billing-total-row">
+          <span class="bt-label">Tax (8%)</span>
+          <span class="bt-val" id="billing-tax">$0.00</span>
+        </div>
+        <div class="billing-total-row grand-total">
+          <span class="bt-label">Total</span>
+          <span class="bt-val" id="billing-total">$0.00</span>
+        </div>
+
+        <button class="place-order-btn ripple-btn" id="place-order-btn">
+          ⚡ Place Order
+        </button>
+        <div class="secure-badge">🔒 256-bit SSL Encrypted · Secure Checkout</div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Order Success Modal -->
+  <div class="order-success-overlay" id="order-success">
+    <div class="order-success-box">
+      <div class="success-icon">🎯</div>
+      <div class="success-title">Order Placed!</div>
+      <p class="success-sub">Your gear is being processed. Time to ascend.</p>
+      <span class="order-id">#A2-00000</span>
+      <button class="success-continue btn-primary ripple-btn" style="font-size:0.95rem;">
+        Back to Home →
+      </button>
+    </div>
+  </div>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

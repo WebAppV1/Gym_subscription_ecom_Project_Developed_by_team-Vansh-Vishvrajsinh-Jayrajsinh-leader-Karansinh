@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equipment — ASCEND 2.0</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body data-page="equipment">
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav id="navbar"></nav>
+  <div class="mobile-menu" id="mobile-menu"></div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-header-inner fade-in-section">
+      <div class="section-tag mono-text">// ASCEND STORE</div>
+      <h1>Premium <span class="gradient-text">Equipment</span></h1>
+      <p>Elite-grade gear engineered for those who refuse to be average.</p>
+    </div>
+  </header>
+
+  <main class="page-content" style="padding-top:2rem;">
+
+    <!-- Most Purchased -->
+    <div class="products-section fade-in-section">
+      <h2 class="products-section-title">🔥 Most Purchased</h2>
+      <div class="products-grid" id="most-purchased-grid"></div>
+    </div>
+
+    <!-- New Arrivals -->
+    <div class="products-section fade-in-section">
+      <h2 class="products-section-title">✦ New Arrivals</h2>
+      <div class="products-grid" id="new-arrivals-grid"></div>
+    </div>
+
+    <!-- All Products -->
+    <div class="products-section fade-in-section">
+      <h2 class="products-section-title">⚡ All Products</h2>
+
+      <!-- Filters + Search -->
+      <div class="equip-controls">
+        <div class="filter-group">
+          <button class="filter-btn active" data-cat="All">All</button>
+          <button class="filter-btn" data-cat="Dumbbells">Dumbbells</button>
+          <button class="filter-btn" data-cat="Barbells">Barbells</button>
+          <button class="filter-btn" data-cat="Machines">Machines</button>
+          <button class="filter-btn" data-cat="Accessories">Accessories</button>
+          <button class="filter-btn" data-cat="Resistance Bands">Bands</button>
+          <button class="filter-btn" data-cat="Benches">Benches</button>
+        </div>
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="product-search" placeholder="Search equipment…" />
+        </div>
+      </div>
+
+      <div class="products-grid" id="all-products-grid"></div>
+    </div>
+
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

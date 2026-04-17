@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASCEND 2.0 — Upgrade Yourself</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="home">
+    <!-- ============================================================
+       INTRO ANIMATION OVERLAY
+  ============================================================ -->
+    <div id="intro-overlay">
+      <div class="intro-content">
+        <p
+          id="intro-line1"
+          class="intro-text glitch-text"
+          data-text="You are not your final form."
+        >
+          You are not your final form.
+        </p>
+        <p id="intro-line2" class="intro-text mono-text">
+          ASCEND 2.0 Initialized
+        </p>
+        <div class="intro-bar-wrap">
+          <div class="intro-bar"></div>
+        </div>
+      </div>
+      <div class="scanlines"></div>
+    </div>
+
+    <!-- ============================================================
+       PARTICLE CANVAS
+  ============================================================ -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+    <nav id="navbar">
+      <div class="nav-logo">
+        <span class="logo-bracket">[</span>ASCEND<span class="logo-v">2.0</span
+        ><span class="logo-bracket">]</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="equipment.html">Equipment</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li>
+          <a href="cart.html"
+            >Cart <span class="nav-badge" id="nav-cart-badge"></span
+          ></a>
+        </li>
+        <li>
+          <a href="wishlist.html"
+            >Wishlist
+            <span class="nav-badge nav-badge-pink" id="nav-wish-badge"></span
+          ></a>
+        </li>
+        <li><a href="account.html">Account</a></li>
+        <li></li>
+        <li><a href="#plans">Plans</a></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <button class="nav-cta ripple-btn">Launch App</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="equipment.html" class="mobile-link">Equipment</a></li>
+        <li><a href="#plans" class="mobile-link">Plans</a></li>
+        <li><a href="cart.html" class="mobile-link">Cart</a></li>
+        <li><a href="wishlist.html" class="mobile-link">Wishlist</a></li>
+        <li><a href="account.html" class="mobile-link">Account</a></li>
+
+        <li><a href="#plans" class="mobile-link">Plans</a></li>
+      </ul>
+    </div>
+
+    <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+    <section id="hero">
+      <div class="hero-bg-glow"></div>
+      <div class="hero-grid-overlay"></div>
+      <div class="hero-content fade-in-section">
+        <div class="hero-badge mono-text">// SYSTEM ONLINE · v2.0.0</div>
+        <h1 class="hero-title">
+          Upgrade Yourself<br />
+          to <span class="gradient-text">Version 2.0</span>
+        </h1>
+        <p class="hero-sub">
+          Stop being the person you were yesterday.<br />
+          This is your transformation engine — body, mind, and discipline.
+        </p>
+        <button
+          class="btn-primary ripple-btn"
+          onclick="window.location.href='./index.html#plans'"
+        >
+          <span class="btn-icon">⚡</span> Start Upgrade
+        </button>
+
+        <button
+          class="btn-ghost ripple-btn"
+          onclick="window.location.href='./index.html#paths'"
+        >
+          View Paths →
+        </button>
+        <!-- XP Preview bar in hero -->
+        <div class="hero-xp">
+          <span class="mono-text xp-label">CURRENT LEVEL</span>
+          <div class="xp-track">
+            <div class="xp-fill" style="width: 12%"></div>
+            <span class="xp-val mono-text">LVL 1</span>
+          </div>
+          <span class="mono-text xp-label">→ POTENTIAL: LVL 10</span>
+        </div>
+      </div>
+      <!-- Hero floating stat cards -->
+      <div class="hero-stats">
+        <div class="stat-card glass fade-in-section" style="--delay: 0.2s">
+          <div class="stat-num gradient-text">12K+</div>
+          <div class="stat-label">Upgrades Active</div>
+        </div>
+        <div class="stat-card glass fade-in-section" style="--delay: 0.4s">
+          <div class="stat-num gradient-text">98%</div>
+          <div class="stat-label">Success Rate</div>
+        </div>
+        <div class="stat-card glass fade-in-section" style="--delay: 0.6s">
+          <div class="stat-num gradient-text">∞</div>
+          <div class="stat-label">Potential</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       UPGRADE PATHS
+  ============================================================ -->
+    <section id="paths" class="section">
+      <div class="section-header fade-in-section">
+        <div class="section-tag mono-text">// SELECT YOUR PATH</div>
+        <h2>Choose Your <span class="gradient-text">Upgrade Path</span></h2>
+        <p class="section-sub">
+          Three dimensions of elite transformation. Master all three or
+          laser-focus on one.
+        </p>
+      </div>
+      <div class="paths-grid">
+        <div
+          class="path-card glass fade-in-section"
+          data-path="physical"
+          style="--delay: 0.1s"
+        >
+          <div class="path-icon-wrap physical-icon">
+            <svg viewBox="0 0 64 64" class="path-svg" aria-hidden="true">
+              <rect x="4" y="28" width="12" height="8" rx="3" />
+              <rect x="48" y="28" width="12" height="8" rx="3" />
+              <rect x="16" y="24" width="8" height="16" rx="2" />
+              <rect x="40" y="24" width="8" height="16" rx="2" />
+              <rect x="24" y="30" width="16" height="4" rx="2" />
+            </svg>
+          </div>
+          <div class="path-tag mono-text physical-tag">PHYSICAL</div>
+          <h3>Physical<br />Upgrade</h3>
+          <p>
+            Rebuild your body from the ground up. Strength, endurance, and elite
+            physique through data-driven programming.
+          </p>
+          <ul class="path-features">
+            <li>✦ Progressive overload system</li>
+            <li>✦ 200+ exercise library</li>
+            <li>✦ AI body composition scan</li>
+            <li>✦ Recovery optimization</li>
+          </ul>
+          <button
+            class="path-btn ripple-btn physical-btn"
+            onclick="window.location.href='./index.html#plans'"
+          >
+            Activate →
+          </button>
+          <div class="path-glow physical-glow"></div>
+        </div>
+
+        <div
+          class="path-card glass fade-in-section"
+          data-path="mental"
+          style="--delay: 0.25s"
+        >
+          <div class="path-icon-wrap mental-icon">
+            <svg viewBox="0 0 64 64" class="path-svg" aria-hidden="true">
+              <path
+                d="M32 8 C20 8 12 16 12 26 C12 32 14 37 18 40 L18 52 L46 52 L46 40 C50 37 52 32 52 26 C52 16 44 8 32 8Z"
+              />
+              <line x1="32" y1="8" x2="32" y2="52" stroke-width="2" />
+              <path
+                d="M20 24 C20 20 24 18 28 20"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M44 24 C44 20 40 18 36 20"
+                stroke-width="2"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div class="path-tag mono-text mental-tag">MENTAL</div>
+          <h3>Mental<br />Upgrade</h3>
+          <p>
+            Rewire your neural pathways. Enhance focus, resilience, and
+            cognitive performance to think at elite levels.
+          </p>
+          <ul class="path-features">
+            <li>✦ Neuroplasticity protocols</li>
+            <li>✦ Deep focus training</li>
+            <li>✦ Stress inoculation system</li>
+            <li>✦ Daily mindset calibration</li>
+          </ul>
+          <button
+            class="path-btn ripple-btn mental-btn"
+            onclick="window.location.href='./index.html#plans'"
+          >
+            Activate →
+          </button>
+          <div class="path-glow mental-glow"></div>
+        </div>
+
+        <div
+          class="path-card glass fade-in-section"
+          data-path="discipline"
+          style="--delay: 0.4s"
+        >
+          <div class="path-icon-wrap discipline-icon">
+            <svg viewBox="0 0 64 64" class="path-svg" aria-hidden="true">
+              <polygon points="36,4 20,34 30,34 28,60 44,30 34,30" />
+            </svg>
+          </div>
+          <div class="path-tag mono-text discipline-tag">DISCIPLINE</div>
+          <h3>Discipline<br />Upgrade</h3>
+          <p>
+            Build the unbreakable system behind elite performers. Atomic habits,
+            identity shifts, and ruthless consistency.
+          </p>
+          <ul class="path-features">
+            <li>✦ Habit architecture engine</li>
+            <li>✦ Identity-based reprogramming</li>
+            <li>✦ Accountability tracking</li>
+            <li>✦ 90-day sprint framework</li>
+          </ul>
+          <button
+            class="path-btn ripple-btn discipline-btn"
+            onclick="window.location.href='./index.html#plans'"
+          >
+            Activate →
+          </button>
+          <div class="path-glow discipline-glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       FREE PLAN EXERCISES (2D CHARACTER ANIMATIONS)
+  ============================================================ -->
+    <section id="exercises" class="section">
+      <div class="section-header fade-in-section">
+        <div class="section-tag mono-text">// FREE ACCESS · LIVE TRAINING</div>
+        <h2>Train With <span class="gradient-text">ASCEND AI Coach</span></h2>
+        <p class="section-sub">
+          Real-time animated exercise guides. No equipment. No excuses. Free
+          forever.
+        </p>
+      </div>
+      <div class="exercises-grid">
+        <!-- PUSH-UP ANIMATION -->
+        <div class="exercise-card glass fade-in-section" style="--delay: 0.1s">
+          <div class="exercise-label">
+            <span class="mono-text ex-tag">EX-01</span>
+            <h3>Push-Up</h3>
+          </div>
+          <div class="anim-stage">
+            <!-- SVG Stickman: Push-up -->
+            <svg
+              class="stickman pushup-anim"
+              viewBox="0 0 200 140"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Floor -->
+              <line
+                x1="10"
+                y1="125"
+                x2="190"
+                y2="125"
+                stroke="#333"
+                stroke-width="2"
+              />
+              <!-- Body group that animates up/down -->
+              <g class="pushup-body">
+                <!-- Head -->
+                <circle cx="155" cy="55" r="12" fill="none" stroke-width="3" />
+                <!-- Neck + Torso -->
+                <line x1="155" y1="67" x2="155" y2="95" stroke-width="3" />
+                <!-- Left arm (front) -->
+                <line x1="155" y1="78" x2="130" y2="100" stroke-width="3" />
+                <line x1="130" y1="100" x2="110" y2="110" stroke-width="3" />
+                <!-- Right arm (back) -->
+                <line x1="155" y1="78" x2="170" y2="100" stroke-width="3" />
+                <line x1="170" y1="100" x2="185" y2="110" stroke-width="3" />
+                <!-- Legs (flat) -->
+                <line x1="155" y1="95" x2="120" y2="115" stroke-width="3" />
+                <line x1="120" y1="115" x2="95" y2="120" stroke-width="3" />
+                <line x1="155" y1="95" x2="165" y2="118" stroke-width="3" />
+                <line x1="165" y1="118" x2="150" y2="123" stroke-width="3" />
+              </g>
+            </svg>
+          </div>
+          <div class="exercise-meta">
+            <span class="meta-pill">3 × 15 reps</span>
+            <span class="meta-pill">Chest · Triceps</span>
+          </div>
+          <p class="exercise-desc">
+            Classic compound movement. Full chest, shoulders, and tricep
+            activation with zero equipment.
+          </p>
+        </div>
+
+        <!-- SQUAT ANIMATION -->
+        <div class="exercise-card glass fade-in-section" style="--delay: 0.25s">
+          <div class="exercise-label">
+            <span class="mono-text ex-tag">EX-02</span>
+            <h3>Squat</h3>
+          </div>
+          <div class="anim-stage">
+            <!-- SVG Stickman: Squat -->
+            <svg
+              class="stickman squat-anim"
+              viewBox="0 0 200 150"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="10"
+                y1="133"
+                x2="190"
+                y2="133"
+                stroke="#333"
+                stroke-width="2"
+              />
+              <!-- Head -->
+              <circle cx="100" cy="30" r="13" fill="none" stroke-width="3" />
+              <!-- Torso -->
+              <line x1="100" y1="43" x2="100" y2="80" stroke-width="3" />
+              <!-- Arms out for balance -->
+              <line x1="100" y1="55" x2="70" y2="70" stroke-width="3" />
+              <line x1="70" y1="70" x2="52" y2="68" stroke-width="3" />
+              <line x1="100" y1="55" x2="130" y2="70" stroke-width="3" />
+              <line x1="130" y1="70" x2="148" y2="68" stroke-width="3" />
+              <!-- Legs (squat group animates) -->
+              <g class="squat-legs">
+                <!-- Left leg -->
+                <line x1="100" y1="80" x2="80" y2="105" stroke-width="3" />
+                <line x1="80" y1="105" x2="72" y2="130" stroke-width="3" />
+                <!-- Right leg -->
+                <line x1="100" y1="80" x2="120" y2="105" stroke-width="3" />
+                <line x1="120" y1="105" x2="128" y2="130" stroke-width="3" />
+              </g>
+            </svg>
+          </div>
+          <div class="exercise-meta">
+            <span class="meta-pill">4 × 20 reps</span>
+            <span class="meta-pill">Legs · Glutes</span>
+          </div>
+          <p class="exercise-desc">
+            King of all exercises. Full lower body activation, core stability,
+            and hormonal response.
+          </p>
+        </div>
+
+        <!-- PLANK ANIMATION -->
+        <div class="exercise-card glass fade-in-section" style="--delay: 0.4s">
+          <div class="exercise-label">
+            <span class="mono-text ex-tag">EX-03</span>
+            <h3>Plank Hold</h3>
+          </div>
+          <div class="anim-stage">
+            <!-- SVG Stickman: Plank with breathing animation -->
+            <svg
+              class="stickman plank-anim"
+              viewBox="0 0 220 120"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="10"
+                y1="105"
+                x2="210"
+                y2="105"
+                stroke="#333"
+                stroke-width="2"
+              />
+              <!-- Plank body group -->
+              <g class="plank-body">
+                <!-- Head -->
+                <circle cx="170" cy="68" r="11" fill="none" stroke-width="3" />
+                <!-- Neck + spine (horizontal) -->
+                <line x1="159" y1="72" x2="90" y2="86" stroke-width="3" />
+                <!-- Front arm -->
+                <line x1="150" y1="78" x2="140" y2="98" stroke-width="3" />
+                <line x1="140" y1="98" x2="125" y2="100" stroke-width="3" />
+                <!-- Back arm -->
+                <line x1="115" y1="83" x2="105" y2="100" stroke-width="3" />
+                <line x1="105" y1="100" x2="88" y2="100" stroke-width="3" />
+                <!-- Legs -->
+                <line x1="90" y1="86" x2="70" y2="90" stroke-width="3" />
+                <line x1="70" y1="90" x2="50" y2="102" stroke-width="3" />
+                <line x1="90" y1="86" x2="80" y2="92" stroke-width="3" />
+                <line x1="80" y1="92" x2="60" y2="103" stroke-width="3" />
+              </g>
+              <!-- Pulse circle for "breathing" -->
+              <circle
+                class="plank-pulse"
+                cx="130"
+                cy="84"
+                r="6"
+                fill="none"
+                stroke-width="2"
+                opacity="0.6"
+              />
+            </svg>
+          </div>
+          <div class="exercise-meta">
+            <span class="meta-pill">3 × 60 sec</span>
+            <span class="meta-pill">Core · Full Body</span>
+          </div>
+          <p class="exercise-desc">
+            The iron position. Build anti-rotation core strength and total body
+            endurance in one hold.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       PLANS & BILLING
+  ============================================================ -->
+    <section id="plans" class="section">
+      <div class="section-header fade-in-section">
+        <div class="section-tag mono-text">// CHOOSE YOUR UPGRADE</div>
+        <h2>Select Your <span class="gradient-text">Plan</span></h2>
+        <p class="section-sub">
+          Invest in yourself. Cancel anytime. Upgrade forever.
+        </p>
+
+        <div class="billing-toggle fade-in-section">
+          <span class="toggle-label">Monthly</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="billing-switch" />
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">
+            Yearly <span class="save-badge">SAVE 40%</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="plans-grid">
+        <!-- FREE -->
+        <div class="plan-card glass fade-in-section" data-plan="free">
+          <div class="plan-header">
+            <div class="plan-name">FREE</div>
+            <div class="plan-desc">Begin your journey</div>
+          </div>
+
+          <div class="plan-price">
+            <span class="price-currency">₹</span>
+            <span class="price-amount" data-monthly="0" data-yearly="0">0</span>
+            <span class="price-period">/mo</span>
+          </div>
+
+          <button
+            class="plan-btn ghost-plan-btn ripple-btn"
+            onclick="openBilling('FREE', 0)"
+          >
+            Get Started Free
+          </button>
+        </div>
+
+        <!-- PRO -->
+        <div class="plan-card glass fade-in-section" data-plan="pro">
+          <div class="plan-header">
+            <div class="plan-name">PRO</div>
+            <div class="plan-desc">Serious upgraders</div>
+          </div>
+
+          <div class="plan-price">
+            <span class="price-currency">₹</span>
+            <span class="price-amount" data-monthly="1599" data-yearly="899"
+              >1599</span
+            >
+            <span class="price-period">/mo</span>
+          </div>
+
+          <button
+            class="plan-btn ghost-plan-btn ripple-btn"
+            onclick="openBilling('PRO', getPrice(this))"
+          >
+            Upgrade to PRO
+          </button>
+        </div>
+
+        <!-- ELITE -->
+        <div
+          class="plan-card glass elite-card fade-in-section"
+          data-plan="elite"
+        >
+          <div class="plan-header">
+            <div class="plan-name elite-name">ELITE</div>
+            <div class="plan-desc">For those who refuse limits</div>
+          </div>
+
+          <div class="plan-price">
+            <span class="price-currency">₹</span>
+            <span class="price-amount" data-monthly="4099" data-yearly="2499"
+              >4099</span
+            >
+            <span class="price-period">/mo</span>
+          </div>
+
+          <button
+            class="plan-btn elite-btn ripple-btn"
+            onclick="openBilling('ELITE', getPrice(this))"
+          >
+            Ascend to ELITE →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔥 SIDE BILLING PANEL -->
+    <div id="billing-panel" class="billing-panel">
+      <div class="billing-content glass">
+        <div class="billing-header">
+          <h2 id="plan-title">Plan</h2>
+          <button class="close-btn" onclick="closeBilling()">✕</button>
+        </div>
+
+        <p class="billing-price">₹0 /mo</p>
+
+        <input type="text" placeholder="Full Name" class="billing-input" />
+        <input type="email" placeholder="Email Address" class="billing-input" />
+
+        <button class="billing-pay-btn">Subscribe Now</button>
+      </div>
+    </div>
+
+    <!-- ⚡ CSS -->
+    <style>
+      .billing-panel {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        width: 350px;
+        height: 100%;
+        transition: 0.4s ease;
+        z-index: 999;
+        backdrop-filter: blur(10px);
+      }
+
+      .billing-panel.active {
+        right: 0;
+      }
+
+      .billing-content {
+        height: 100%;
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .billing-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .billing-price {
+        font-size: 26px;
+        margin: 15px 0;
+      }
+
+      .billing-input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: none;
+      }
+
+      .billing-pay-btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(45deg, #00f5ff, #9f00ff);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+
+    <!-- ⚡ JS -->
+    <script>
+      function openBilling(plan, price) {
+        document.getElementById("billing-panel").classList.add("active");
+
+        document.getElementById("plan-title").innerText = plan + " Plan";
+        document.querySelector(".billing-price").innerText =
+          "₹" + price + " /mo";
+      }
+
+      function closeBilling() {
+        document.getElementById("billing-panel").classList.remove("active");
+      }
+
+      function getPrice(btn) {
+        const card = btn.closest(".plan-card");
+        const priceEl = card.querySelector(".price-amount");
+        const isYearly = document.getElementById("billing-switch")?.checked;
+
+        return isYearly
+          ? priceEl.getAttribute("data-yearly")
+          : priceEl.getAttribute("data-monthly");
+      }
+    </script>
+
+    <!-- ============================================================
+       PROGRESS / XP SYSTEM
+  ============================================================ -->
+    <section id="progress" class="section">
+      <div class="section-header fade-in-section">
+        <div class="section-tag mono-text">// YOUR UPGRADE PROGRESS</div>
+        <h2>Track Your <span class="gradient-text">Ascension</span></h2>
+        <p class="section-sub">
+          Every action earns XP. Every XP earns a better version of you.
+        </p>
+      </div>
+
+      <div class="progress-container glass fade-in-section">
+        <div class="progress-levels">
+          <div class="level-item active-level">
+            <div class="level-num">1</div>
+            <div class="level-name">Awakened</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">2</div>
+            <div class="level-name">Rising</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">3</div>
+            <div class="level-name">Builder</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">4</div>
+            <div class="level-name">Forge</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">5</div>
+            <div class="level-name">Warrior</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">6</div>
+            <div class="level-name">Elite</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">7</div>
+            <div class="level-name">Master</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">8</div>
+            <div class="level-name">Legend</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">9</div>
+            <div class="level-name">Apex</div>
+          </div>
+          <div class="level-item">
+            <div class="level-num">10</div>
+            <div class="level-name">ASCENDED</div>
+          </div>
+        </div>
+
+        <div class="xp-section">
+          <div class="xp-header">
+            <span class="mono-text">XP PROGRESS</span>
+            <span class="xp-count mono-text" id="xp-counter"
+              >1,240 / 10,000 XP</span
+            >
+          </div>
+          <div class="xp-bar-container">
+            <div class="xp-bar-fill" id="xp-bar" style="width: 0%"></div>
+            <div class="xp-bar-glow"></div>
+          </div>
+          <div class="xp-milestones">
+            <span>LVL 1</span>
+            <span>LVL 3</span>
+            <span>LVL 5</span>
+            <span>LVL 7</span>
+            <span>LVL 10</span>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-block glass-inner">
+            <div class="stat-icon">💪</div>
+            <div class="stat-val gradient-text" data-target="47">0</div>
+            <div class="stat-lbl">Workouts Done</div>
+          </div>
+          <div class="stat-block glass-inner">
+            <div class="stat-icon">🔥</div>
+            <div class="stat-val gradient-text" data-target="21">0</div>
+            <div class="stat-lbl">Day Streak</div>
+          </div>
+          <div class="stat-block glass-inner">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-val gradient-text" data-target="1240">0</div>
+            <div class="stat-lbl">Total XP</div>
+          </div>
+          <div class="stat-block glass-inner">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-val gradient-text" data-target="8">0</div>
+            <div class="stat-lbl">Badges Earned</div>
+          </div>
+        </div>
+
+        <!-- Add XP Button (demo) -->
+        <button
+          class="btn-primary ripple-btn"
+          id="earn-xp-btn"
+          style="margin-top: 2rem"
+        >
+          + Earn 100 XP (Demo)
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       ABOUT US / TEAM
+  ============================================================ -->
+    <section id="team" class="section">
+      <div class="section-header fade-in-section">
+        <div class="section-tag mono-text">// BUILDERS OF THE SYSTEM</div>
+        <h2>The <span class="gradient-text">Architects</span></h2>
+        <p class="section-sub">
+          Four minds united by one mission: engineer human potential.
+        </p>
+      </div>
+      <div class="team-grid">
+        <!-- Leader -->
+        <div
+          class="team-card glass leader-card fade-in-section"
+          style="--delay: 0.1s"
+        >
+          <div class="leader-badge-wrap">
+            <span class="leader-badge mono-text">⚡ LEADER</span>
+          </div>
+          <div class="avatar-wrap leader-avatar">
+            <div class="avatar-inner">JP</div>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="member-name">Jayrajsinh Parmar</h3>
+          <div class="member-role mono-text">System Architect · Visionary</div>
+          <p class="member-bio">
+            The mind behind ASCEND 2.0. Obsessed with systems thinking, peak
+            performance, and building tools that make people dangerous.
+          </p>
+          <div class="member-tags">
+            <span class="m-tag">Strategy</span>
+            <span class="m-tag">Vision</span>
+            <span class="m-tag">Systems</span>
+          </div>
+        </div>
+
+        <div class="team-card glass fade-in-section" style="--delay: 0.2s">
+          <div class="avatar-wrap">
+            <div class="avatar-inner">VM</div>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="member-name">Vansh Malhotra</h3>
+          <div class="member-role mono-text">Frontend Engineer · UX Lead</div>
+          <p class="member-bio">
+            Crafts digital experiences that feel alive. Every pixel is
+            deliberate, every animation has purpose.
+          </p>
+          <div class="member-tags">
+            <span class="m-tag">UI/UX</span>
+            <span class="m-tag">Animation</span>
+            <span class="m-tag">Design</span>
+          </div>
+        </div>
+
+        <div class="team-card glass fade-in-section" style="--delay: 0.3s">
+          <div class="avatar-wrap">
+            <div class="avatar-inner">VC</div>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="member-name">Vishvrajsinh Chudasama</h3>
+          <div class="member-role mono-text">
+            Backend Engineer · Data Systems
+          </div>
+          <p class="member-bio">
+            The engine under the hood. Builds the invisible infrastructure that
+            makes the upgrade system run at scale.
+          </p>
+          <div class="member-tags">
+            <span class="m-tag">Backend</span>
+            <span class="m-tag">APIs</span>
+            <span class="m-tag">Scale</span>
+          </div>
+        </div>
+
+        <div class="team-card glass fade-in-section" style="--delay: 0.4s">
+          <div class="avatar-wrap">
+            <div class="avatar-inner">KM</div>
+            <div class="avatar-ring"></div>
+          </div>
+          <h3 class="member-name">Karansinh Mori</h3>
+          <div class="member-role mono-text">Growth & Product Strategy</div>
+          <p class="member-bio">
+            Turns vision into traction. Product thinking meets growth hacking —
+            always finding the lever that moves everything.
+          </p>
+          <div class="member-tags">
+            <span class="m-tag">Growth</span>
+            <span class="m-tag">Product</span>
+            <span class="m-tag">Marketing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       CTA FOOTER BAND
+  ============================================================ -->
+    <section class="cta-band">
+      <div class="cta-glow"></div>
+      <div class="cta-content fade-in-section">
+        <h2>
+          Your Final Form<br /><span class="gradient-text">Is Waiting.</span>
+        </h2>
+        <p>
+          Stop scrolling. Start ascending. Version 2.0 of you exists — go build
+          it.
+        </p>
+        <button class="btn-primary ripple-btn large-btn">
+          Begin Transformation →
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+    <footer class="site-footer" id="site-footer">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>ASCEND<span class="logo-v">2.0</span
+        ><span class="logo-bracket">]</span>
+      </div>
+      <div class="footer-links">
+        <a href="#paths">Paths</a>
+        <a href="#plans">Plans</a>
+      </div>
+      <div class="footer-copy mono-text">
+        © 2025 ASCEND 2.0 · Built by the Architects · All rights reserved
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

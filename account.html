@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account — ASCEND 2.0</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body data-page="account">
+    <canvas id="particle-canvas"></canvas>
+
+    <nav id="navbar"></nav>
+    <div class="mobile-menu" id="mobile-menu"></div>
+
+    <header class="page-header">
+      <div class="page-header-inner fade-in-section">
+        <div class="section-tag mono-text">// COMMAND CENTER</div>
+        <h1>My <span class="gradient-text">Account</span></h1>
+        <p>Manage your profile, orders, and upgrade path.</p>
+      </div>
+    </header>
+
+    <main class="page-content" style="padding-top: 2rem">
+      <div class="account-layout">
+        <!-- Sidebar -->
+        <aside class="account-sidebar fade-in-section">
+          <div class="account-avatar">
+            JP
+            <div class="account-avatar-ring"></div>
+          </div>
+          <div class="account-name">Jayrajsinh Parmar</div>
+          <div class="account-email">jay@ascend2.io</div>
+
+          <ul class="account-nav">
+            <li><a href="#profile" class="active">👤 Profile</a></li>
+            <li><a href="#orders">📦 Orders</a></li>
+            <li><a href="cart.html">🛒 Cart</a></li>
+            <li><a href="wishlist.html">❤️ Wishlist</a></li>
+            <li><a href="billing.html">💳 Billing</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main -->
+        <div class="account-main">
+          <!-- Profile -->
+          <div class="account-card fade-in-section" id="profile">
+            <h3>👤 Profile Information</h3>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input
+                  id="field-name"
+                  class="form-input"
+                  type="text"
+                  placeholder="Jayrajsinh Parmar"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input
+                  id="field-email"
+                  class="form-input"
+                  type="email"
+                  placeholder="jay@ascend2.io"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input
+                  id="field-phone"
+                  class="form-input"
+                  type="tel"
+                  placeholder="+91 9999999999"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Member Since</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  value="January 2025"
+                  disabled
+                  style="opacity: 0.5"
+                />
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem">
+              <button class="btn-primary ripple-btn" id="save-profile-btn">
+                Save Changes
+              </button>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="account-card fade-in-section">
+            <h3>🔐 Change Password</h3>
+
+            <div class="form-grid">
+              <input
+                class="form-input"
+                type="password"
+                placeholder="Current Password"
+              />
+              <input
+                class="form-input"
+                type="password"
+                placeholder="New Password"
+              />
+              <input
+                class="form-input"
+                type="password"
+                placeholder="Confirm Password"
+              />
+            </div>
+
+            <button
+              class="btn-primary ripple-btn"
+              onclick="alert('Password updated ✓')"
+            >
+              Update Password
+            </button>
+          </div>
+
+          <!-- Orders -->
+          <div class="account-card fade-in-section" id="orders">
+            <h3>📦 Order History</h3>
+            <table class="order-table">
+              <tbody id="order-history-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <!-- ⚡ JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const nameEl = document.querySelector(".account-name");
+        const emailEl = document.querySelector(".account-email");
+        const avatarEl = document.querySelector(".account-avatar");
+
+        // Load saved data
+        const savedName = localStorage.getItem("userName");
+        const savedEmail = localStorage.getItem("userEmail");
+
+        if (savedName) {
+          nameEl.innerText = savedName;
+          updateAvatar(savedName);
+          document.getElementById("field-name").value = savedName;
+        }
+
+        if (savedEmail) {
+          emailEl.innerText = savedEmail;
+          document.getElementById("field-email").value = savedEmail;
+        }
+
+        // Save button
+        document
+          .getElementById("save-profile-btn")
+          .addEventListener("click", () => {
+            const name = document.getElementById("field-name").value;
+            const email = document.getElementById("field-email").value;
+
+            // Update UI
+            nameEl.innerText = name;
+            emailEl.innerText = email;
+            updateAvatar(name);
+
+            // Save
+            localStorage.setItem("userName", name);
+            localStorage.setItem("userEmail", email);
+
+            alert("Profile updated ✓");
+          });
+
+        function updateAvatar(name) {
+          const initials = name
+            .split(" ")
+            .map((w) => w[0])
+            .join("")
+            .toUpperCase();
+
+          avatarEl.innerHTML =
+            initials + '<div class="account-avatar-ring"></div>';
+        }
+      });
+    </script>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

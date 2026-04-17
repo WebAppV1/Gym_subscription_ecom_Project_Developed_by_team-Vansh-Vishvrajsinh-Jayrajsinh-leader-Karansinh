@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wishlist — ASCEND 2.0</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body data-page="wishlist">
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav id="navbar"></nav>
+  <div class="mobile-menu" id="mobile-menu"></div>
+
+  <header class="page-header">
+    <div class="page-header-inner fade-in-section">
+      <div class="section-tag mono-text">// SAVED GEAR</div>
+      <h1>My <span class="gradient-text">Wishlist</span></h1>
+      <p>Gear you're eyeing. Move it to cart when you're ready to ascend.</p>
+    </div>
+  </header>
+
+  <main class="page-content" style="padding-top:2rem;">
+    <div id="wishlist-empty" class="wishlist-empty-state">
+      <div class="empty-icon">❤️</div>
+      <h3>Your wishlist is empty</h3>
+      <p>Browse equipment and tap the heart icon to save items here.</p>
+      <a href="equipment.html" class="btn-primary ripple-btn">Browse Equipment →</a>
+    </div>
+    <div class="products-grid" id="wishlist-grid"></div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

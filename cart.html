@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart — ASCEND 2.0</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body data-page="cart">
+
+  <canvas id="particle-canvas"></canvas>
+
+  <nav id="navbar"></nav>
+  <div class="mobile-menu" id="mobile-menu"></div>
+
+  <header class="page-header">
+    <div class="page-header-inner fade-in-section">
+      <div class="section-tag mono-text">// YOUR ARSENAL</div>
+      <h1>Shopping <span class="gradient-text">Cart</span>
+        <span id="cart-count" class="nav-badge" style="font-size:1rem;padding:4px 10px;"></span>
+      </h1>
+      <p>Review your gear before the upgrade begins.</p>
+    </div>
+  </header>
+
+  <main class="page-content" style="padding-top:2rem;">
+    <div class="cart-layout">
+
+      <!-- Cart Items -->
+      <div>
+        <div id="cart-empty" class="cart-empty-state">
+          <div class="empty-icon">🛒</div>
+          <h3>Your cart is empty</h3>
+          <p>Time to load up. Head to the equipment store.</p>
+          <a href="equipment.html" class="btn-primary ripple-btn">Browse Equipment →</a>
+        </div>
+        <div id="cart-body"></div>
+      </div>
+
+      <!-- Summary -->
+      <div class="cart-summary-box fade-in-section">
+        <h3>Order Summary</h3>
+        <div class="summary-row">
+          <span class="s-label">Subtotal</span>
+          <span class="s-val" id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span class="s-label">Shipping</span>
+          <span class="s-val" style="color:var(--green)">FREE</span>
+        </div>
+        <div class="summary-row">
+          <span class="s-label">Tax (8%)</span>
+          <span class="s-val" id="cart-tax">$0.00</span>
+        </div>
+        <div class="summary-row total-row">
+          <span class="s-label">Total</span>
+          <span class="s-val" id="cart-total">$0.00</span>
+        </div>
+        <button class="checkout-cta ripple-btn" id="checkout-btn" disabled>
+          ⚡ Proceed to Checkout
+        </button>
+        <a href="equipment.html" class="shop-link">← Continue Shopping</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
